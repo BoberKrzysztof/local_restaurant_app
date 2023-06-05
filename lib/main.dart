@@ -1,7 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'homepage.dart';
+import 'package:local_restaurant_app/screens/product_detail_screen.dart';
+import 'screens/home_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
 
@@ -14,9 +15,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: const SplashScreen(),
+      routes: {
+        ProductDetailScreen.routeName : (ctx) => ProductDetailScreen(),
+      },
     );
   }
 }
@@ -50,4 +54,4 @@ class SplashScreen extends StatelessWidget {
   }
 }
 
-//W następnym kroku dodam czcionki
+// 33 minuta 29 sekunda

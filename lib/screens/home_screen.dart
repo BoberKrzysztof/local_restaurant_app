@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:local_restaurant_app/screens/products_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,11 +29,8 @@ class _HomePageState extends State<HomePage> {
             activeColor: const Color(0xFFFE1EBA),
             tabBackgroundColor: Colors.grey.shade800,
             gap: 8,
-            onTabChange: (index) {
-                print(index);
-            },
             padding: const EdgeInsets.all(16),
-            tabs: const [
+            tabs: [
               GButton(
                 icon: Icons.home,
                 text: 'Home',
@@ -44,6 +42,12 @@ class _HomePageState extends State<HomePage> {
               GButton(
                 icon: Icons.fastfood,
                 text: 'Products',
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProductsScreen()),
+                  );
+                },
               ),
               GButton(
                 icon: Icons.shopping_cart,
